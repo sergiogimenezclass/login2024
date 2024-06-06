@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <div class="fondo">
+        <div class="contenedor">
+
+            <div class="login" id="login">
+                <h1>Login</h1>
+                <div id="mensaje2" class="pnlMsg"></div>                
+                <span class="frase">Ingrese seguro a nuestra app</span>
+                <form action="" method="post">
+                    <div class="user_input">
+                        <svg class="icono_user" width="64px" height="64px" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path
+                                    d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
+                                    stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                </path>
+                                <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z" stroke="#000000"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </g>
+                        </svg>
+                        <input type="text" name="" placeholder="User" class="usuario" id="user"
+                            value="superusuario2020">
+                    </div>
+
+
+                    <div class="pass_input">
+                        <svg class="icono_pass" width="64px" height="64px" viewBox="0 0 48 48"
+                            xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <g id="Layer_2" data-name="Layer 2">
+                                    <g id="invisible_box" data-name="invisible box">
+                                        <rect width="48" height="48" fill="none"></rect>
+                                    </g>
+                                    <g id="Layer_7" data-name="Layer 7">
+                                        <g>
+                                            <path
+                                                d="M39,18H35V13A11,11,0,0,0,24,2H22A11,11,0,0,0,11,13v5H7a2,2,0,0,0-2,2V44a2,2,0,0,0,2,2H39a2,2,0,0,0,2-2V20A2,2,0,0,0,39,18ZM15,13a7,7,0,0,1,7-7h2a7,7,0,0,1,7,7v5H15ZM37,42H9V22H37Z">
+                                            </path>
+                                            <circle cx="15" cy="32" r="3"></circle>
+                                            <circle cx="23" cy="32" r="3"></circle>
+                                            <circle cx="31" cy="32" r="3"></circle>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        <input type="password" name="" placeholder="Password" class="password" id="password"
+                            value="clave2020">
+
+                    </div>
+                    <input class="boton" type="button" value="Login Now" onclick="validacion()">
+                </form>
+                <div class="linea_cont">
+                    <div class="linea"></div>
+                    <span class="others">Login whit others</span>
+                </div>
+
+                <a href="">
+                    <div class="google_cont">
+                        <img src="https://cdn.iconscout.com/icon/free/png-256/free-google-91-93413.png" alt=""
+                            class="google">
+                        <span class="goo_texto">Login with google</span>
+                    </div>
+                </a>
+
+                <a href="">
+                    <div class="facebook_cont">
+                        <img src="https://cdn-icons-png.flaticon.com/256/2504/2504792.png" alt="" class="facebook">
+
+                        <span class="face_texto">Login with facebook</span>
+                    </div>
+
+                </a>
+
+                <div class="signup_create">
+                    <div class="linea"></div>
+                    <span class="others" id="toggle_status" onclick="toggleStatusLogin()">Crear cuenta</a></span>
+                </div>
+                <div id="mensaje" class="pnlMsg">
+
+                </div>
+            </div>
+
+            <div class="signup" id="signup">
+                <h1>Sign Up</h1>
+                <div id="mensaje2" class="pnlMsg"></div>                
+                <span class="frase">Ingrese seguro a nuestra app</span>
+                <form action="" method="post">
+                    <div class="user_input">
+                        <svg class="icono_user" width="64px" height="64px" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path
+                                    d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
+                                    stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                </path>
+                                <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z" stroke="#000000"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </g>
+                        </svg>
+                        <input type="text" name="" placeholder="User" class="usuario" id="user"
+                            value="superusuario2020">
+                    </div>
+
+
+                    <div class="pass_input">
+                        <svg class="icono_pass" width="64px" height="64px" viewBox="0 0 48 48"
+                            xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <g id="Layer_2" data-name="Layer 2">
+                                    <g id="invisible_box" data-name="invisible box">
+                                        <rect width="48" height="48" fill="none"></rect>
+                                    </g>
+                                    <g id="Layer_7" data-name="Layer 7">
+                                        <g>
+                                            <path
+                                                d="M39,18H35V13A11,11,0,0,0,24,2H22A11,11,0,0,0,11,13v5H7a2,2,0,0,0-2,2V44a2,2,0,0,0,2,2H39a2,2,0,0,0,2-2V20A2,2,0,0,0,39,18ZM15,13a7,7,0,0,1,7-7h2a7,7,0,0,1,7,7v5H15ZM37,42H9V22H37Z">
+                                            </path>
+                                            <circle cx="15" cy="32" r="3"></circle>
+                                            <circle cx="23" cy="32" r="3"></circle>
+                                            <circle cx="31" cy="32" r="3"></circle>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        <input type="password" name="" placeholder="Password" class="password" id="password"
+                            value="clave2020">
+
+                    </div>
+                    <input class="boton" type="button" value="Sign Up" onclick="validacion()">
+                </form>
+                <div class="signup_create">
+                    <div class="linea"></div>
+                    <span class="others" id="toggle_status" onclick="toggleStatusSignup()">Login</a></span>
+                </div>
+                <div id="mensaje" class="pnlMsg">
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <script>
+        let toggleStatusLogin = function(){
+            // agregamos clases hide a.Login y show Signup
+            document.querySelector('#login').classList.add('hide')
+            document.querySelector('#signup').classList.add('show')
+            
+            // Quitamos clases show y hide
+            document.querySelector('#signup').classList.remove('hide')
+            document.querySelector('#login').classList.remove('show')
+        }
+
+        let toggleStatusSignup = function(){
+            // agregamos clases hide y show
+            document.querySelector('#login').classList.add('show')
+            document.querySelector('#signup').classList.add('hide')
+
+            // removemo clases hide y show
+            document.querySelector('#login').classList.remove('hide')
+            document.querySelector('#signup').classList.remove('show')
+
+        }
+
+        let validacion = function (panel) {
+            // Estos son los datos de registro del usuario
+            // hardcodeado
+            let usuarioRegistrado = 'pepe2024'
+            let claveRegistrada = 'admin123'
+
+            let usuarioRegistrado2 = ''
+            let claveRegistrada2 = ''
+
+            let usuarioRegistrado3 = ''
+            let claveRegistrada3 = ''
+
+
+
+                // Estos son los datos que ingreso el usuario en el input
+            let usuario = document.querySelector('#user').value
+            let clave = document.querySelector('#password').value
+            
+            let msgError = 'Usuario o clave incorrecta'
+            let msgOk = 'Acceso exitoso'
+
+            if (usuario == usuarioRegistrado) {
+                // Parte que se ejecuta si es verdadera la condicion
+                // document.querySelector('#mensaje').innerText = 'Usuario correcto'
+                if (clave == claveRegistrada) {
+                    document.querySelector('#mensaje').innerText = msgOk
+                    window.location.replace('dashboard/dashboard.html')
+                }else{
+                    document.querySelector('#mensaje').innerText = msgError
+                }
+panel            } else {
+                // Parte que No se ejecuta si es falsa la condicion
+                document.querySelector('#mensaje').innerText = msgError
+
+            }
+
+            
+
+
+            // document.querySelector('#mensaje').innerText = 
+        }
+    </script>
+
+    <script>
+       let nombre1 = 'federico'
+        let nombre2 = 'federico'
+        let edad1 = 16
+
+
+
+        
+        
+        if (nombre1 == nombre2) {
+        //    Verdadero
+            console.log('El nombre es igual y mayor de edad')
+            if (edad1 > 5) {
+                console.log('Es mayor de edad')
+                
+            }
+        } else {
+            // Falso
+            console.log('El nombre es distinto y/o menor de edad')
+        }
+
+        let miFuncion = function(persona){
+            console.log('Holaaaaaa ' + persona)
+        }
+
+
+        let listado = []
+        listado.push('Nacho', '12345','paola', 'clave1', 'Ema', '4321')
+
+        console.log(listado)
+        
+
+    </script>
+    <script>
+        // EJERCICIOS
+        // 1
+        /* let nombre = 'Federico Reynoso'
+        console.log(nombre)
+ */
+        // 2
+        /*  let frase = 'Crea una variable llamada frase y asígnale una frase de tu elección. Luego, muestra por consola el número de caracteres que tiene la variable frase' */
+        // let mayuscula = 
+        /* let tc = '2345-4532-4567-0987'
+        console.log(frase)
+        console.log(frase.length)
+        console.log(frase.toUpperCase())
+        console.log(frase)
+        console.log(frase.toLocaleLowerCase())
+        console.log(tc)
+        console.log(tc.split('-', 1))
+        console.log(frase.replace('frase', 'FRASE'))
+        console.log(frase.toLocaleLowerCase())
+        console.log(frase.toLowerCase()) */
+
+
+    </script>
+    <script>
+        // let usuario = 'pucha123'
+        // let password = '12345678'
+
+        // console.log(usuario)
+        // console.log(password)
+        // console.log('La cantidad de letras es: ' + usuario.length)
+        // console.log(usuario.trim())
+        // console.log('Tiene la pablara prohibida "malo"? Respuesta: ' + usuario.includes('malo'))
+
+        // console.log('Tiene la pablara prohibida : "pucha"? Respuesta: ' + usuario.includes('pucha'))
+
+        // console.log('Tiene la pablara prohibida "123"?  Respuesta: ' + usuario.includes('123'))
+
+
+    </script>
+</body>
+
+</html>
