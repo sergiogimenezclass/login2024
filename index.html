@@ -13,9 +13,9 @@
     <div class="fondo">
         <div class="contenedor">
 
-            <div class="login" id="login">
+            <div class="login show" id="login">
                 <h1>Login</h1>
-                <div id="mensaje2" class="pnlMsg"></div>                
+                <div id="mensaje2" class="pnlMsg"></div>
                 <span class="frase">Ingrese seguro a nuestra app</span>
                 <form action="" method="post">
                     <div class="user_input">
@@ -64,7 +64,7 @@
                             value="clave2020">
 
                     </div>
-                    <input class="boton" type="button" value="Login Now" onclick="validacion()">
+                    <input class="boton" type="button" value="Login Now" onclick="registrar()">
                 </form>
                 <div class="linea_cont">
                     <div class="linea"></div>
@@ -99,7 +99,7 @@
 
             <div class="signup" id="signup">
                 <h1>Sign Up</h1>
-                <div id="mensaje2" class="pnlMsg"></div>                
+                <div id="mensaje2" class="pnlMsg"></div>
                 <span class="frase">Ingrese seguro a nuestra app</span>
                 <form action="" method="post">
                     <div class="user_input">
@@ -116,7 +116,7 @@
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                             </g>
                         </svg>
-                        <input type="text" name="" placeholder="User" class="usuario" id="user"
+                        <input type="text" name="" placeholder="User" class="usuario" id="userSignUp"
                             value="superusuario2020">
                     </div>
 
@@ -144,11 +144,11 @@
                                 </g>
                             </g>
                         </svg>
-                        <input type="password" name="" placeholder="Password" class="password" id="password"
+                        <input type="password" name="" placeholder="Password" class="password" id="passwordSignUp"
                             value="clave2020">
 
                     </div>
-                    <input class="boton" type="button" value="Sign Up" onclick="validacion()">
+                    <input class="boton" type="button" value="Sign Up" onclick="registrar()">
                 </form>
                 <div class="signup_create">
                     <div class="linea"></div>
@@ -164,17 +164,71 @@
 
     </div>
     <script>
-        let toggleStatusLogin = function(){
+        let registrar = function () {
+            let listadoUsuarios = []
+            let usuario1 = {
+                nombre: 'pepe2025',
+                clave: '12345'
+            }
+
+            listadoUsuarios.push(usuario1)
+
+
+
+            if (document.querySelector("#login").classList.contains('show')) {
+                console.log('vamos a hacer login')
+                listadoUsuarios.forEach(miUsuario => {
+                    console.log('Mi usuario es: ' + miUsuario.nombre)
+                    let usuarioLog = document.querySelector('#user').value
+                    let claveLog = document.querySelector('#password').value
+                    let msgError = 'Usuario o clave incorrecta'
+            let msgOk = 'Acceso exitoso'
+                    if (usuarioLog == miUsuario.nombre) {
+                        // Parte que se ejecuta si es verdadera la condicion
+                        // document.querySelector('#mensaje').innerText = 'Usuario correcto'
+                        if (claveLog == miUsuario.clave) {
+                            document.querySelector('#mensaje').innerText = msgOk
+                            window.location.replace('dashboard/dashboard.html')
+                        } else {
+                            document.querySelector('#mensaje').innerText = msgError
+                        }
+                        panel
+                    } else {
+                        // Parte que No se ejecuta si es falsa la condicion
+                        document.querySelector('#mensaje').innerText = msgError
+
+                    }
+                });
+            } else {
+                console.log('vamos a crear usuario')
+                let usuarioInp = document.querySelector('#userSignUp').value
+                let claveInp = document.querySelector('#passwordSignUp').value
+
+                let nuevoUsuario = {
+                    nombre: usuarioInp,
+                    clave: claveInp
+                }
+
+                listadoUsuarios.push(nuevoUsuario)
+
+
+                console.log(listadoUsuarios)
+
+            }
+
+        }
+
+        let toggleStatusLogin = function () {
             // agregamos clases hide a.Login y show Signup
             document.querySelector('#login').classList.add('hide')
             document.querySelector('#signup').classList.add('show')
-            
+
             // Quitamos clases show y hide
             document.querySelector('#signup').classList.remove('hide')
             document.querySelector('#login').classList.remove('show')
         }
 
-        let toggleStatusSignup = function(){
+        let toggleStatusSignup = function () {
             // agregamos clases hide y show
             document.querySelector('#login').classList.add('show')
             document.querySelector('#signup').classList.add('hide')
@@ -199,10 +253,10 @@
 
 
 
-                // Estos son los datos que ingreso el usuario en el input
+            // Estos son los datos que ingreso el usuario en el input
             let usuario = document.querySelector('#user').value
             let clave = document.querySelector('#password').value
-            
+
             let msgError = 'Usuario o clave incorrecta'
             let msgOk = 'Acceso exitoso'
 
@@ -212,16 +266,17 @@
                 if (clave == claveRegistrada) {
                     document.querySelector('#mensaje').innerText = msgOk
                     window.location.replace('dashboard/dashboard.html')
-                }else{
+                } else {
                     document.querySelector('#mensaje').innerText = msgError
                 }
-panel            } else {
+                panel
+            } else {
                 // Parte que No se ejecuta si es falsa la condicion
                 document.querySelector('#mensaje').innerText = msgError
 
             }
 
-            
+
 
 
             // document.querySelector('#mensaje').innerText = 
@@ -229,36 +284,36 @@ panel            } else {
     </script>
 
     <script>
-       let nombre1 = 'federico'
+        let nombre1 = 'federico'
         let nombre2 = 'federico'
         let edad1 = 16
 
 
 
-        
-        
+
+
         if (nombre1 == nombre2) {
-        //    Verdadero
+            //    Verdadero
             console.log('El nombre es igual y mayor de edad')
             if (edad1 > 5) {
                 console.log('Es mayor de edad')
-                
+
             }
         } else {
             // Falso
             console.log('El nombre es distinto y/o menor de edad')
         }
 
-        let miFuncion = function(persona){
+        let miFuncion = function (persona) {
             console.log('Holaaaaaa ' + persona)
         }
 
 
         let listado = []
-        listado.push('Nacho', '12345','paola', 'clave1', 'Ema', '4321')
+        listado.push('Nacho', '12345', 'paola', 'clave1', 'Ema', '4321')
 
         console.log(listado)
-        
+
 
     </script>
     <script>
