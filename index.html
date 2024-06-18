@@ -15,7 +15,6 @@
 
             <div class="login show" id="login">
                 <h1>Login</h1>
-                <div id="mensaje2" class="pnlMsg"></div>
                 <span class="frase">Ingrese seguro a nuestra app</span>
                 <form action="" method="post">
                     <div class="user_input">
@@ -92,14 +91,13 @@
                     <div class="linea"></div>
                     <span class="others" id="toggle_status" onclick="toggleStatusLogin()">Crear cuenta</a></span>
                 </div>
-                <div id="mensaje" class="pnlMsg">
+                <div id="mensaje" class="pnlMsgLoginError">
 
                 </div>
             </div>
 
             <div class="signup" id="signup">
                 <h1>Sign Up</h1>
-                <div id="mensaje2" class="pnlMsg"></div>
                 <span class="frase">Ingrese seguro a nuestra app</span>
                 <form action="" method="post">
                     <div class="user_input">
@@ -154,7 +152,7 @@
                     <div class="linea"></div>
                     <span class="others" id="toggle_status" onclick="toggleStatusSignup()">Login</a></span>
                 </div>
-                <div id="mensaje" class="pnlMsg">
+                <div id="mensajeSignup" class="pnlMsgSignUpOk">
 
                 </div>
             </div>
@@ -163,198 +161,7 @@
 
 
     </div>
-    <script>
-        let registrar = function () {
-            let listadoUsuarios = []
-            let usuario1 = {
-                nombre: 'pepe2025',
-                clave: '12345'
-            }
-
-            listadoUsuarios.push(usuario1)
-
-
-
-            if (document.querySelector("#login").classList.contains('show')) {
-                console.log('vamos a hacer login')
-                listadoUsuarios.forEach(miUsuario => {
-                    console.log('Mi usuario es: ' + miUsuario.nombre)
-                    let usuarioLog = document.querySelector('#user').value
-                    let claveLog = document.querySelector('#password').value
-                    let msgError = 'Usuario o clave incorrecta'
-            let msgOk = 'Acceso exitoso'
-                    if (usuarioLog == miUsuario.nombre) {
-                        // Parte que se ejecuta si es verdadera la condicion
-                        // document.querySelector('#mensaje').innerText = 'Usuario correcto'
-                        if (claveLog == miUsuario.clave) {
-                            document.querySelector('#mensaje').innerText = msgOk
-                            window.location.replace('dashboard/dashboard.html')
-                        } else {
-                            document.querySelector('#mensaje').innerText = msgError
-                        }
-                        panel
-                    } else {
-                        // Parte que No se ejecuta si es falsa la condicion
-                        document.querySelector('#mensaje').innerText = msgError
-
-                    }
-                });
-            } else {
-                console.log('vamos a crear usuario')
-                let usuarioInp = document.querySelector('#userSignUp').value
-                let claveInp = document.querySelector('#passwordSignUp').value
-
-                let nuevoUsuario = {
-                    nombre: usuarioInp,
-                    clave: claveInp
-                }
-
-                listadoUsuarios.push(nuevoUsuario)
-
-
-                console.log(listadoUsuarios)
-
-            }
-
-        }
-
-        let toggleStatusLogin = function () {
-            // agregamos clases hide a.Login y show Signup
-            document.querySelector('#login').classList.add('hide')
-            document.querySelector('#signup').classList.add('show')
-
-            // Quitamos clases show y hide
-            document.querySelector('#signup').classList.remove('hide')
-            document.querySelector('#login').classList.remove('show')
-        }
-
-        let toggleStatusSignup = function () {
-            // agregamos clases hide y show
-            document.querySelector('#login').classList.add('show')
-            document.querySelector('#signup').classList.add('hide')
-
-            // removemo clases hide y show
-            document.querySelector('#login').classList.remove('hide')
-            document.querySelector('#signup').classList.remove('show')
-
-        }
-
-        let validacion = function (panel) {
-            // Estos son los datos de registro del usuario
-            // hardcodeado
-            let usuarioRegistrado = 'pepe2024'
-            let claveRegistrada = 'admin123'
-
-            let usuarioRegistrado2 = ''
-            let claveRegistrada2 = ''
-
-            let usuarioRegistrado3 = ''
-            let claveRegistrada3 = ''
-
-
-
-            // Estos son los datos que ingreso el usuario en el input
-            let usuario = document.querySelector('#user').value
-            let clave = document.querySelector('#password').value
-
-            let msgError = 'Usuario o clave incorrecta'
-            let msgOk = 'Acceso exitoso'
-
-            if (usuario == usuarioRegistrado) {
-                // Parte que se ejecuta si es verdadera la condicion
-                // document.querySelector('#mensaje').innerText = 'Usuario correcto'
-                if (clave == claveRegistrada) {
-                    document.querySelector('#mensaje').innerText = msgOk
-                    window.location.replace('dashboard/dashboard.html')
-                } else {
-                    document.querySelector('#mensaje').innerText = msgError
-                }
-                panel
-            } else {
-                // Parte que No se ejecuta si es falsa la condicion
-                document.querySelector('#mensaje').innerText = msgError
-
-            }
-
-
-
-
-            // document.querySelector('#mensaje').innerText = 
-        }
-    </script>
-
-    <script>
-        let nombre1 = 'federico'
-        let nombre2 = 'federico'
-        let edad1 = 16
-
-
-
-
-
-        if (nombre1 == nombre2) {
-            //    Verdadero
-            console.log('El nombre es igual y mayor de edad')
-            if (edad1 > 5) {
-                console.log('Es mayor de edad')
-
-            }
-        } else {
-            // Falso
-            console.log('El nombre es distinto y/o menor de edad')
-        }
-
-        let miFuncion = function (persona) {
-            console.log('Holaaaaaa ' + persona)
-        }
-
-
-        let listado = []
-        listado.push('Nacho', '12345', 'paola', 'clave1', 'Ema', '4321')
-
-        console.log(listado)
-
-
-    </script>
-    <script>
-        // EJERCICIOS
-        // 1
-        /* let nombre = 'Federico Reynoso'
-        console.log(nombre)
- */
-        // 2
-        /*  let frase = 'Crea una variable llamada frase y asígnale una frase de tu elección. Luego, muestra por consola el número de caracteres que tiene la variable frase' */
-        // let mayuscula = 
-        /* let tc = '2345-4532-4567-0987'
-        console.log(frase)
-        console.log(frase.length)
-        console.log(frase.toUpperCase())
-        console.log(frase)
-        console.log(frase.toLocaleLowerCase())
-        console.log(tc)
-        console.log(tc.split('-', 1))
-        console.log(frase.replace('frase', 'FRASE'))
-        console.log(frase.toLocaleLowerCase())
-        console.log(frase.toLowerCase()) */
-
-
-    </script>
-    <script>
-        // let usuario = 'pucha123'
-        // let password = '12345678'
-
-        // console.log(usuario)
-        // console.log(password)
-        // console.log('La cantidad de letras es: ' + usuario.length)
-        // console.log(usuario.trim())
-        // console.log('Tiene la pablara prohibida "malo"? Respuesta: ' + usuario.includes('malo'))
-
-        // console.log('Tiene la pablara prohibida : "pucha"? Respuesta: ' + usuario.includes('pucha'))
-
-        // console.log('Tiene la pablara prohibida "123"?  Respuesta: ' + usuario.includes('123'))
-
-
-    </script>
+<script src="app.js"></script>
 </body>
 
 </html>

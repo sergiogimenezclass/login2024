@@ -173,6 +173,7 @@
     left: 0px;
     background-color:#eaddff;
     padding: 5px;
+    cursor: pointer;
 }
 
 .google, .facebook {
@@ -194,7 +195,25 @@ a {
     text-decoration: none;
 }
 
-.pnlMsg {
+.pnlMsgLoginOk {
+    margin-top: 25px;
+    color: #01c54c;
+    font-weight: bold;
+}
+
+.pnlMsgLoginError {
+    margin-top: 25px;
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.pnlMsgSignUpOk {
+    margin-top: 25px;
+    color: #01c54c;
+    font-weight: bold;
+}
+
+.pnlMsgSignUpError {
     margin-top: 25px;
     color: #ff0000;
     font-weight: bold;
