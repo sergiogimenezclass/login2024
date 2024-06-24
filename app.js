@@ -6,7 +6,6 @@ let registrar = function () {
 
 
     if (document.querySelector("#login").classList.contains('show')) {
-        console.log('vamos a hacer login')
 
         // Este IF sirve para saber si hay elementos en el array. Es decir, si hay usuarios registrados o no.
         if (listadoUsuarios.length === 0) {
@@ -24,11 +23,14 @@ let registrar = function () {
                 let msgError = 'Usuario o clave incorrecta'
                 let msgOk = 'Acceso exitoso'
                 if (usuarioLog == miUsuario.nombre) {
+                    console.log('usuario validado')
                     // Parte que se ejecuta si es verdadera la condicion
                     // document.querySelector('#mensaje').innerText = 'Usuario correcto'
                     if (claveLog == miUsuario.clave) {
+                        console.log('clave validada')
                         window.location.replace('dashboard/dashboard.html')
                     } else {
+                        console.log('clave incorrecta')
                         document.querySelector('#mensaje').innerText = msgError
                         setTimeout(function () {
                             document.querySelector('#mensaje').innerText = ""
@@ -36,8 +38,12 @@ let registrar = function () {
                     }
 
                 } else {
+                    console.log('usuario incorrecto')
                     // Parte que No se ejecuta si es falsa la condicion
                     document.querySelector('#mensaje').innerText = msgError
+                    setTimeout(function () {
+                        document.querySelector('#mensaje').innerText = ""
+                    }, 5000);
 
                 }
             });
@@ -65,13 +71,6 @@ let registrar = function () {
 
 }
 
-let registro = function () {
-    // 
-}
-
-let login = function () {
-    // 
-}
 
 let toggleStatusLogin = function () {
     // agregamos clases hide a.Login y show Signup
